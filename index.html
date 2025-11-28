@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Hub - Master Your Money</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d6efd'%3E%3Cpath d='M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8h18v10zm-2-6h-2v-2h2v2z'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d6efd'%3E%3Cpath d='M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8h18v10zm-2-6h-2v-2h2v2z'/%3E%3C/svg%3E">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-wallet2"></i> FinanceHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="guides.html">Guides</a></li>
+                    <li class="nav-item"><a class="nav-link" href="comparison.html">Compare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="budget.html">Budget</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="signup.html">Sign Up</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section bg-gradient-primary text-white py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center min-vh-50">
+                <div class="col-lg-6 text-md-center">
+                    <h1 class="display-4 fw-bold mb-4">Take Control of Your Financial Future</h1>
+                    <p class="lead mb-4">Expert guidance, powerful tools, and actionable insights to help you build wealth, manage debt, and achieve your financial goals.</p>
+                    <div class="d-flex gap-3 flex-wrap justify-content-md-center">
+                        <a href="signup.html" class="btn btn-light btn-lg">Get Started Free</a>
+                        <a href="tools.html" class="btn btn-outline-light btn-lg">Explore Tools</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center d-flex align-items-center justify-content-center">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Financial Planning" class="img-fluid rounded shadow-lg" style="max-height: 400px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Topics -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Trending Topics</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center d-flex flex-column">
+                            <i class="bi bi-cash-stack text-primary display-4 mb-3"></i>
+                            <h5 class="card-title">Budgeting</h5>
+                            <p class="card-text flex-grow-1">Learn to create and stick to a budget</p>
+                            <a href="articles.html?category=budgeting" class="btn btn-sm btn-primary mt-auto">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center d-flex flex-column">
+                            <i class="bi bi-piggy-bank text-success display-4 mb-3"></i>
+                            <h5 class="card-title">Savings</h5>
+                            <p class="card-text flex-grow-1">Build your emergency fund and save smart</p>
+                            <a href="articles.html?category=savings" class="btn btn-sm btn-success mt-auto">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center d-flex flex-column">
+                            <i class="bi bi-graph-up text-info display-4 mb-3"></i>
+                            <h5 class="card-title">Investing</h5>
+                            <p class="card-text flex-grow-1">Grow your wealth through smart investments</p>
+                            <a href="articles.html?category=investing" class="btn btn-sm btn-info mt-auto">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm hover-card">
+                        <div class="card-body text-center d-flex flex-column">
+                            <i class="bi bi-credit-card text-warning display-4 mb-3"></i>
+                            <h5 class="card-title">Loans</h5>
+                            <p class="card-text flex-grow-1">Understand loans and manage debt wisely</p>
+                            <a href="articles.html?category=loans" class="btn btn-sm btn-warning mt-auto">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Preview -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Financial Tools</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center d-flex flex-column">
+                            <i class="bi bi-calculator text-primary fs-1 mb-3 d-block"></i>
+                            <h5 class="card-title">EMI Calculator</h5>
+                            <p class="card-text flex-grow-1">Calculate your monthly EMI for loans</p>
+                            <a href="tools.html#emi-calculator" class="btn btn-primary mt-auto">Calculate</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center d-flex flex-column">
+                            <i class="bi bi-graph-up-arrow text-success fs-1 mb-3 d-block"></i>
+                            <h5 class="card-title">SIP Calculator</h5>
+                            <p class="card-text flex-grow-1">Plan your Systematic Investment Plan</p>
+                            <a href="tools.html#sip-calculator" class="btn btn-success mt-auto">Calculate</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center d-flex flex-column">
+                            <i class="bi bi-clipboard-data text-info fs-1 mb-3 d-block"></i>
+                            <h5 class="card-title">Budget Planner</h5>
+                            <p class="card-text flex-grow-1">Create and track your monthly budget</p>
+                            <a href="budget.html" class="btn btn-info mt-auto">Plan Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="tools.html" class="btn btn-outline-primary">View All Tools</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles -->
+    <section class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+                <h2 class="mb-0">Latest Financial Articles</h2>
+                <a href="articles.html" class="btn btn-outline-primary">View All</a>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card article-card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=200&fit=crop" alt="Budgeting Tips" class="card-img-top" style="height: 180px; object-fit: cover;">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Budgeting</span>
+                            <h5 class="card-title">10 Budgeting Tips for Beginners</h5>
+                            <p class="card-text">Learn the fundamentals of creating a budget that works for your lifestyle - by Rajesh Kumar</p>
+                            <div class="text-center mt-3">
+                                <a href="article-detail.html?id=1" class="btn btn-sm btn-outline-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card article-card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=200&fit=crop" alt="Mutual Funds vs Stocks" class="card-img-top" style="height: 180px; object-fit: cover;">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Investing</span>
+                            <h5 class="card-title">Mutual Funds vs Stocks: Which is Better?</h5>
+                            <p class="card-text">A comprehensive comparison to help you make informed investment decisions...</p>
+                            <div class="text-center mt-3">
+                                <a href="article-detail.html?id=2" class="btn btn-sm btn-outline-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card article-card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=200&fit=crop" alt="Credit Score" class="card-img-top" style="height: 180px; object-fit: cover;">
+                        <div class="card-body">
+                            <span class="badge bg-warning mb-2">Loans</span>
+                            <h5 class="card-title">How to Improve Your Credit Score</h5>
+                            <p class="card-text">Practical steps to boost your credit score and unlock better loan terms...</p>
+                            <div class="text-center mt-3">
+                                <a href="article-detail.html?id=3" class="btn btn-sm btn-outline-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Users Say</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <p class="card-text flex-grow-1">"The budgeting tools helped me save ₹50,000 in just 3 months. Highly recommended!"</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="https://ui-avatars.com/api/?name=Rajesh+Kumar&size=80&background=0d6efd&color=fff&bold=true" alt="Rajesh Kumar" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                                <div>
+                                    <strong>Rajesh Kumar</strong><br>
+                                    <small class="text-muted">Software Engineer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <p class="card-text flex-grow-1">"The investment guides are excellent. I finally understand mutual funds and SIPs! -Priya Mehta"</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="https://ui-avatars.com/api/?name=Priya+Mehta&size=80&background=198754&color=fff&bold=true" alt="Priya Mehta" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                                <div>
+                                    <strong>Priya Mehta</strong><br>
+                                    <small class="text-muted">Marketing Manager</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <p class="card-text flex-grow-1">"The EMI calculator saved me hours of research. Clear, simple, and accurate! -Amit Sharma"</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="https://ui-avatars.com/api/?name=Amit+Sharma&size=80&background=0dcaf0&color=fff&bold=true" alt="Amit Sharma" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                                <div>
+                                    <strong>Amit Sharma</strong><br>
+                                    <small class="text-muted">Business Owner</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5><i class="bi bi-wallet2"></i> FinanceHub</h5>
+                    <p>Your trusted partner in financial planning and wealth management.</p>
+                </div>
+                <div class="col-md-2">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="articles.html" class="text-white-50">Articles</a></li>
+                        <li><a href="tools.html" class="text-white-50">Tools</a></li>
+                        <li><a href="courses.html" class="text-white-50">Courses</a></li>
+                        <li><a href="guides.html" class="text-white-50">Guides</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-white-50">About Us</a></li>
+                        <li><a href="contact.html" class="text-white-50">Contact</a></li>
+                        <li><a href="faq.html" class="text-white-50">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Legal</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="terms.html" class="text-white-50">Terms</a></li>
+                        <li><a href="privacy.html" class="text-white-50">Privacy</a></li>
+                        <li><a href="disclaimer.html" class="text-white-50">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Connect</h6>
+                    <div class="social-icons-wrapper">
+                        <a href="#" class="social-icon facebook" aria-label="Facebook" title="Follow us on Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon twitter" aria-label="Twitter" title="Follow us on Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon linkedin" aria-label="LinkedIn" title="Connect with us on LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-icon instagram" aria-label="Instagram" title="Follow us on Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                    <p class="text-white-50 small mt-3 mb-0">Follow us for financial tips and updates</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 FinanceHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

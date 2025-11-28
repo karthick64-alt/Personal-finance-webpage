@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner - FinanceHub</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d6efd'%3E%3Cpath d='M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8h18v10zm-2-6h-2v-2h2v2z'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d6efd'%3E%3Cpath d='M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8h18v10zm-2-6h-2v-2h2v2z'/%3E%3C/svg%3E">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-wallet2"></i> FinanceHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="guides.html">Guides</a></li>
+                    <li class="nav-item"><a class="nav-link" href="comparison.html">Compare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="budget.html">Budget</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="signup.html">Sign Up</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+        <h1 class="text-center mb-4">Budget Planner</h1>
+
+        <!-- Budget Overview -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-value" id="total-income">₹0</div>
+                    <div class="stat-label">Total Income</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-value text-danger" id="total-expenses">₹0</div>
+                    <div class="stat-label">Total Expenses</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-value text-success" id="remaining-budget">₹0</div>
+                    <div class="stat-label">Remaining Budget</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Budget Progress -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h5 class="mb-3">Budget Progress</h5>
+                <div class="budget-progress">
+                    <div class="budget-progress-bar bg-success" id="budget-progress-bar" style="width: 0%;">0%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- Set Income -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Set Monthly Income</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="income-form">
+                            <div class="mb-3">
+                                <label for="monthly-income" class="form-label">Monthly Income (₹)</label>
+                                <input type="number" class="form-control" id="monthly-income" placeholder="50000" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Update Income</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Add Expense -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">Add Expense</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="expense-form">
+                            <div class="mb-3">
+                                <label for="expense-category" class="form-label">Category</label>
+                                <select class="form-select" id="expense-category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="Food">Food</option>
+                                    <option value="Transport">Transport</option>
+                                    <option value="Entertainment">Entertainment</option>
+                                    <option value="Bills">Bills</option>
+                                    <option value="Shopping">Shopping</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="expense-description" class="form-label">Description</label>
+                                <input type="text" class="form-control" id="expense-description" placeholder="e.g., Groceries" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="expense-amount" class="form-label">Amount (₹)</label>
+                                <input type="number" class="form-control" id="expense-amount" placeholder="1000" step="0.01" required>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Add Expense</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Category Breakdown -->
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <h5 class="mb-0">Category Breakdown</h5>
+                    </div>
+                    <div class="card-body" id="category-breakdown">
+                        <p class="text-muted text-center">No expenses yet</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <!-- Expense List -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">Expense History</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="expense-list">
+                                    <tr>
+                                        <td colspan="5" class="text-center text-muted">No expenses recorded yet</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expense Chart -->
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <h5 class="mb-0">Expense Chart</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="expenseChart" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- Footer -->
+   <footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h5><i class="bi bi-wallet2"></i> FinanceHub</h5>
+                <p>Your trusted partner in financial planning and wealth management.</p>
+            </div>
+            <div class="col-md-2">
+                <h6>Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="articles.html" class="text-white-50">Articles</a></li>
+                    <li><a href="tools.html" class="text-white-50">Tools</a></li>
+                    <li><a href="courses.html" class="text-white-50">Courses</a></li>
+                    <li><a href="guides.html" class="text-white-50">Guides</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h6>Company</h6>
+                <ul class="list-unstyled">
+                    <li><a href="about.html" class="text-white-50">About Us</a></li>
+                    <li><a href="contact.html" class="text-white-50">Contact</a></li>
+                    <li><a href="faq.html" class="text-white-50">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h6>Legal</h6>
+                <ul class="list-unstyled">
+                    <li><a href="terms.html" class="text-white-50">Terms</a></li>
+                    <li><a href="privacy.html" class="text-white-50">Privacy</a></li>
+                    <li><a href="disclaimer.html" class="text-white-50">Disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h6>Connect</h6>
+                <div class="social-icons-wrapper">
+                    <a href="#" class="social-icon facebook" aria-label="Facebook" title="Follow us on Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="social-icon twitter" aria-label="Twitter" title="Follow us on Twitter">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon linkedin" aria-label="LinkedIn" title="Connect with us on LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-icon instagram" aria-label="Instagram" title="Follow us on Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                </div>
+                <p class="text-white-50 small mt-3 mb-0">Follow us for financial tips and updates</p>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2025 FinanceHub. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    let expenseChart = null;
+
+    document.getElementById('income-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        setIncome();
+    });
+
+    document.getElementById('expense-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        addExpense();
+    });
+
+    function updateExpenseChart() {
+        const categoryTotals = {};
+        budgetData.expenses.forEach(exp => {
+            categoryTotals[exp.category] = (categoryTotals[exp.category] || 0) + exp.amount;
+        });
+
+        const ctx = document.getElementById('expenseChart');
+        if (ctx) {
+            if (expenseChart) {
+                expenseChart.destroy();
+            }
+
+            const categories = Object.keys(categoryTotals);
+            const amounts = Object.values(categoryTotals);
+
+            if (categories.length > 0) {
+                expenseChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: categories,
+                        datasets: [{
+                            data: amounts,
+                            backgroundColor: [
+                                '#0d6efd',
+                                '#198754',
+                                '#ffc107',
+                                '#dc3545',
+                                '#0dcaf0',
+                                '#6c757d'
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true
+                    }
+                });
+            }
+        }
+    }
+
+    // Override updateBudgetDisplay to include chart update
+    const originalUpdateBudgetDisplay = updateBudgetDisplay;
+    updateBudgetDisplay = function() {
+        originalUpdateBudgetDisplay();
+        updateExpenseChart();
+    };
+
+    // Initialize chart on page load
+    if (document.getElementById('expenseChart')) {
+        updateExpenseChart();
+    }
+</script>
+</body>
+</html>
+

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Courses - FinanceHub</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d6efd'%3E%3Cpath d='M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8h18v10zm-2-6h-2v-2h2v2z'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d6efd'%3E%3Cpath d='M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8h18v10zm-2-6h-2v-2h2v2z'/%3E%3C/svg%3E">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-wallet2"></i> FinanceHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="guides.html">Guides</a></li>
+                    <li class="nav-item"><a class="nav-link" href="comparison.html">Compare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="budget.html">Budget</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="signup.html">Sign Up</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+        <div class="text-center mb-5">
+            <h1>Finance Courses</h1>
+            <p class="lead">Learn personal finance from experts and take control of your financial future</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop" alt="Personal Finance Basics" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">Free</span>
+                        <h5 class="card-title">Personal Finance Basics</h5>
+                        <p class="card-text">Learn the fundamentals of personal finance, budgeting, and money.</p>
+                        <div class="mb-3">
+                            <small class="text-muted">
+                                <i class="bi bi-clock"></i> 4 hours | 
+                                <i class="bi bi-person"></i> Beginner
+                            </small>
+                        </div>
+                        <a href="course-detail.html?id=1" class="btn btn-primary w-100">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=250&fit=crop" alt="Investment Beginner Course" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <span class="badge bg-warning mb-2">Premium</span>
+                        <h5 class="card-title">Investment Beginner Course</h5>
+                        <p class="card-text">Master the basics of investing in stocks, mutual funds, and other instruments.</p>
+                        <div class="mb-3">
+                            <small class="text-muted">
+                                <i class="bi bi-clock"></i> 8 hours | 
+                                <i class="bi bi-person"></i> Beginner
+                            </small>
+                        </div>
+                        <a href="course-detail.html?id=2" class="btn btn-success w-100">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=250&fit=crop" alt="Credit Score Improvement" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">Free</span>
+                        <h5 class="card-title">Credit Score Improvement</h5>
+                        <p class="card-text">Learn how to improve your credit score and maintain good credit health.</p>
+                        <div class="mb-3">
+                            <small class="text-muted">
+                                <i class="bi bi-clock"></i> 3 hours | 
+                                <i class="bi bi-person"></i> All Levels
+                            </small>
+                        </div>
+                        <a href="course-detail.html?id=3" class="btn btn-info w-100">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=250&fit=crop" alt="Tax Planning Course" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <span class="badge bg-warning mb-2">Premium</span>
+                        <h5 class="card-title">Tax Planning Course</h5>
+                        <p class="card-text">Master tax planning strategies and maximize your tax savings legally.</p>
+                        <div class="mb-3">
+                            <small class="text-muted">
+                                <i class="bi bi-clock"></i> 6 hours | 
+                                <i class="bi bi-person"></i> Intermediate
+                            </small>
+                        </div>
+                        <a href="course-detail.html?id=4" class="btn btn-warning w-100">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop" alt="Insurance Planning" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">Free</span>
+                        <h5 class="card-title">Insurance Planning</h5>
+                        <p class="card-text">Understand different types of insurance and how to choose the right coverage.</p>
+                        <div class="mb-3">
+                            <small class="text-muted">
+                                <i class="bi bi-clock"></i> 5 hours | 
+                                <i class="bi bi-person"></i> Beginner
+                            </small>
+                        </div>
+                        <a href="course-detail.html?id=5" class="btn btn-danger w-100">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Advanced Wealth Building" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <span class="badge bg-warning mb-2">Premium</span>
+                        <h5 class="card-title">Advanced Wealth Building</h5>
+                        <p class="card-text">Advanced strategies for building and preserving wealth over the long term.</p>
+                        <div class="mb-3">
+                            <small class="text-muted">
+                                <i class="bi bi-clock"></i> 10 hours | 
+                                <i class="bi bi-person"></i> Advanced
+                            </small>
+                        </div>
+                        <a href="course-detail.html?id=6" class="btn btn-secondary w-100">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5><i class="bi bi-wallet2"></i> FinanceHub</h5>
+                    <p>Your trusted partner in financial planning and wealth management.</p>
+                </div>
+                <div class="col-md-2">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="articles.html" class="text-white-50">Articles</a></li>
+                        <li><a href="tools.html" class="text-white-50">Tools</a></li>
+                        <li><a href="courses.html" class="text-white-50">Courses</a></li>
+                        <li><a href="guides.html" class="text-white-50">Guides</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-white-50">About Us</a></li>
+                        <li><a href="contact.html" class="text-white-50">Contact</a></li>
+                        <li><a href="faq.html" class="text-white-50">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Legal</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="terms.html" class="text-white-50">Terms</a></li>
+                        <li><a href="privacy.html" class="text-white-50">Privacy</a></li>
+                        <li><a href="disclaimer.html" class="text-white-50">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Connect</h6>
+                    <div class="social-icons-wrapper">
+                        <a href="#" class="social-icon facebook" aria-label="Facebook" title="Follow us on Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon twitter" aria-label="Twitter" title="Follow us on Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon linkedin" aria-label="LinkedIn" title="Connect with us on LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-icon instagram" aria-label="Instagram" title="Follow us on Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                    <p class="text-white-50 small mt-3 mb-0">Follow us for financial tips and updates</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 FinanceHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

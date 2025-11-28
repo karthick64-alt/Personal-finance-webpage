@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Articles - FinanceHub</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d6efd'%3E%3Cpath d='M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8h18v10zm-2-6h-2v-2h2v2z'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d6efd'%3E%3Cpath d='M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8h18v10zm-2-6h-2v-2h2v2z'/%3E%3C/svg%3E">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-wallet2"></i> FinanceHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="guides.html">Guides</a></li>
+                    <li class="nav-item"><a class="nav-link" href="comparison.html">Compare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="budget.html">Budget</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="signup.html">Sign Up</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <div class="col-lg-3 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Categories</h5>
+                    </div>
+                    <div class="list-group list-group-flush">
+                        <a href="articles.html" class="list-group-item list-group-item-action">All Articles</a>
+                        <a href="articles.html?category=budgeting" class="list-group-item list-group-item-action">Budgeting</a>
+                        <a href="articles.html?category=savings" class="list-group-item list-group-item-action">Savings</a>
+                        <a href="articles.html?category=investments" class="list-group-item list-group-item-action">Investments</a>
+                        <a href="articles.html?category=loans" class="list-group-item list-group-item-action">Loans</a>
+                        <a href="articles.html?category=taxes" class="list-group-item list-group-item-action">Taxes</a>
+                        <a href="articles.html?category=insurance" class="list-group-item list-group-item-action">Insurance</a>
+                        <a href="articles.html?category=credit-cards" class="list-group-item list-group-item-action">Credit Cards</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+                    <h2 class="mb-0">Financial Articles</h2>
+                    <div class="input-group" style="max-width: 300px;">
+                        <input type="text" class="form-control" placeholder="Search articles..." id="searchInput">
+                        <button class="btn btn-outline-primary" type="button"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="row g-4" id="articles-container">
+                    <!-- Articles will be dynamically loaded -->
+                    <div class="col-md-6">
+                        <div class="card article-card h-100 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=200&fit=crop" alt="Budgeting Tips" class="card-img-top" style="height: 180px; object-fit: cover;">
+                            <div class="card-body">
+                                <span class="badge bg-primary mb-2">Budgeting</span>
+                                <h5 class="card-title">10 Budgeting Tips for Beginners - by Rajesh Kumar</h5>
+                                <p class="card-text article-meta">
+                                    <i class="bi bi-calendar"></i> Jan 15, 2024 | 
+                                    <i class="bi bi-person"></i> Finance Expert
+                                </p>
+                                <p class="card-text">Learn the fundamentals of creating a budget that works for your lifestyle. Discover proven strategies to track expenses and save more money...</p>
+                                <div class="text-center mt-3">
+                                    <a href="article-detail.html?id=1" class="btn btn-sm btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card article-card h-100 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=200&fit=crop" alt="Mutual Funds vs Stocks" class="card-img-top" style="height: 180px; object-fit: cover;">
+                            <div class="card-body">
+                                <span class="badge bg-success mb-2">Investments</span>
+                                <h5 class="card-title">Mutual Funds vs Stocks: Which is Better?</h5>
+                                <p class="card-text article-meta">
+                                    <i class="bi bi-calendar"></i> Jan 12, 2024 | 
+                                    <i class="bi bi-person"></i> Investment Advisor
+                                </p>
+                                <p class="card-text">A comprehensive comparison to help you make informed investment decisions. Understand the risks, returns, and suitability of each option...</p>
+                                <div class="text-center mt-3">
+                                    <a href="article-detail.html?id=2" class="btn btn-sm btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card article-card h-100 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=200&fit=crop" alt="Credit Score" class="card-img-top" style="height: 180px; object-fit: cover;">
+                            <div class="card-body">
+                                <span class="badge bg-warning mb-2">Loans</span>
+                                <h5 class="card-title">How to Improve Your Credit Score</h5>
+                                <p class="card-text article-meta">
+                                    <i class="bi bi-calendar"></i> Jan 10, 2024 | 
+                                    <i class="bi bi-person"></i> Credit Expert
+                                </p>
+                                <p class="card-text">Practical steps to boost your credit score and unlock better loan terms. Learn about factors affecting your credit and how to improve them...</p>
+                                <div class="text-center mt-3">
+                                    <a href="article-detail.html?id=3" class="btn btn-sm btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card article-card h-100 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=200&fit=crop" alt="Tax Saving" class="card-img-top" style="height: 180px; object-fit: cover;">
+                            <div class="card-body">
+                                <span class="badge bg-info mb-2">Taxes</span>
+                                <h5 class="card-title">Tax Saving Investments for FY 2024-25</h5>
+                                <p class="card-text article-meta">
+                                    <i class="bi bi-calendar"></i> Jan 8, 2024 | 
+                                    <i class="bi bi-person"></i> Tax Consultant
+                                </p>
+                                <p class="card-text">Explore the best tax-saving investment options under Section 80C and other sections. Maximize your tax savings legally and efficiently...</p>
+                                <div class="text-center mt-3">
+                                    <a href="article-detail.html?id=4" class="btn btn-sm btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card article-card h-100 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=200&fit=crop" alt="Life Insurance" class="card-img-top" style="height: 180px; object-fit: cover;">
+                            <div class="card-body">
+                                <span class="badge bg-danger mb-2">Insurance</span>
+                                <h5 class="card-title">Life Insurance: Term vs Whole Life</h5>
+                                <p class="card-text article-meta">
+                                    <i class="bi bi-calendar"></i> Jan 5, 2024 | 
+                                    <i class="bi bi-person"></i> Insurance Advisor
+                                </p>
+                                <p class="card-text">Understand the differences between term and whole life insurance. Choose the right policy based on your needs and financial goals...</p>
+                                <div class="text-center mt-3">
+                                    <a href="article-detail.html?id=5" class="btn btn-sm btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card article-card h-100 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop" alt="Credit Cards" class="card-img-top" style="height: 180px; object-fit: cover;">
+                            <div class="card-body">
+                                <span class="badge bg-secondary mb-2">Credit Cards</span>
+                                <h5 class="card-title">Best Credit Cards for Cashback in 2024</h5>
+                                <p class="card-text article-meta">
+                                    <i class="bi bi-calendar"></i> Jan 3, 2024 | 
+                                    <i class="bi bi-person"></i> Finance Expert
+                                </p>
+                                <p class="card-text">Compare the top credit cards offering maximum cashback and rewards. Learn how to maximize benefits while avoiding debt traps...</p>
+                                <div class="text-center mt-3">
+                                    <a href="article-detail.html?id=6" class="btn btn-sm btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav aria-label="Page navigation" class="mt-5">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5><i class="bi bi-wallet2"></i> FinanceHub</h5>
+                    <p>Your trusted partner in financial planning and wealth management.</p>
+                </div>
+                <div class="col-md-2">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="articles.html" class="text-white-50">Articles</a></li>
+                        <li><a href="tools.html" class="text-white-50">Tools</a></li>
+                        <li><a href="courses.html" class="text-white-50">Courses</a></li>
+                        <li><a href="guides.html" class="text-white-50">Guides</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-white-50">About Us</a></li>
+                        <li><a href="contact.html" class="text-white-50">Contact</a></li>
+                        <li><a href="faq.html" class="text-white-50">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Legal</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="terms.html" class="text-white-50">Terms</a></li>
+                        <li><a href="privacy.html" class="text-white-50">Privacy</a></li>
+                        <li><a href="disclaimer.html" class="text-white-50">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Connect</h6>
+                    <div class="social-icons-wrapper">
+                        <a href="#" class="social-icon facebook" aria-label="Facebook" title="Follow us on Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon twitter" aria-label="Twitter" title="Follow us on Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon linkedin" aria-label="LinkedIn" title="Connect with us on LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-icon instagram" aria-label="Instagram" title="Follow us on Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                    <p class="text-white-50 small mt-3 mb-0">Follow us for financial tips and updates</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 FinanceHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

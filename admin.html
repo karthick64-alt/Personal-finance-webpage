@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - FinanceHub</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d6efd'%3E%3Cpath d='M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8h18v10zm-2-6h-2v-2h2v2z'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d6efd'%3E%3Cpath d='M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8h18v10zm-2-6h-2v-2h2v2z'/%3E%3C/svg%3E">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-2 admin-sidebar">
+                <div class="text-center text-white mb-4">
+                    <h4><i class="bi bi-wallet2"></i> Admin</h4>
+                </div>
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="#dashboard" onclick="showSection('dashboard')">
+                        <i class="bi bi-speedometer2"></i> Dashboard
+                    </a>
+                    <a class="nav-link" href="#articles" onclick="showSection('articles')">
+                        <i class="bi bi-file-text"></i> Articles
+                    </a>
+                    <a class="nav-link" href="#tools" onclick="showSection('tools')">
+                        <i class="bi bi-calculator"></i> Tools
+                    </a>
+                    <a class="nav-link" href="#users" onclick="showSection('users')">
+                        <i class="bi bi-people"></i> Users
+                    </a>
+                    <a class="nav-link" href="#categories" onclick="showSection('categories')">
+                        <i class="bi bi-tags"></i> Categories
+                    </a>
+                    <a class="nav-link" href="#analytics" onclick="showSection('analytics')">
+                        <i class="bi bi-graph-up"></i> Analytics
+                    </a>
+                    <a class="nav-link" href="#contact" onclick="showSection('contact')">
+                        <i class="bi bi-envelope"></i> Contact Forms
+                    </a>
+                    <hr class="text-white">
+                    <a class="nav-link" href="index.html">
+                        <i class="bi bi-house"></i> Back to Site
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-10 p-4">
+                <h2 class="mb-4">Admin Dashboard</h2>
+
+                <!-- Dashboard Section -->
+                <div id="dashboard-section" class="admin-section">
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-3">
+                            <div class="stat-card">
+                                <div class="stat-value">1,234</div>
+                                <div class="stat-label">Total Users</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-card">
+                                <div class="stat-value">56</div>
+                                <div class="stat-label">Articles</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-card">
+                                <div class="stat-value">12</div>
+                                <div class="stat-label">Tools</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-card">
+                                <div class="stat-value">89</div>
+                                <div class="stat-label">Contact Forms</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm">
+                        <div class="card-header">
+                            <h5 class="mb-0">Recent Activity</h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Action</th>
+                                        <th>User</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2024-01-15</td>
+                                        <td>New Article</td>
+                                        <td>Admin</td>
+                                        <td>10 Budgeting Tips for Beginners</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024-01-14</td>
+                                        <td>New User</td>
+                                        <td>rajesh@example.com</td>
+                                        <td>User registered</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024-01-13</td>
+                                        <td>Contact Form</td>
+                                        <td>priya@example.com</td>
+                                        <td>Inquiry about SIP</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Articles Section -->
+                <div id="articles-section" class="admin-section" style="display: none;">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3>Manage Articles</h3>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addArticleModal">
+                            <i class="bi bi-plus-circle"></i> Add Article
+                        </button>
+                    </div>
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Title</th>
+                                        <th>Category</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>10 Budgeting Tips for Beginners</td>
+                                        <td>Budgeting</td>
+                                        <td>2024-01-15</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Mutual Funds vs Stocks</td>
+                                        <td>Investments</td>
+                                        <td>2024-01-12</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Users Section -->
+                <div id="users-section" class="admin-section" style="display: none;">
+                    <h3 class="mb-4">Manage Users</h3>
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Search users...">
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Joined</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Rajesh Kumar</td>
+                                        <td>rajesh@example.com</td>
+                                        <td>2024-01-10</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-info">View</button>
+                                            <button class="btn btn-sm btn-danger">Ban</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Priya Mehta</td>
+                                        <td>priya@example.com</td>
+                                        <td>2024-01-08</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-info">View</button>
+                                            <button class="btn btn-sm btn-danger">Ban</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories Section -->
+                <div id="categories-section" class="admin-section" style="display: none;">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3>Manage Categories</h3>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
+                            <i class="bi bi-plus-circle"></i> Add Category
+                        </button>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <h5>Budgeting</h5>
+                                    <p class="text-muted">12 articles</p>
+                                    <button class="btn btn-sm btn-primary">Edit</button>
+                                    <button class="btn btn-sm btn-danger">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <h5>Investments</h5>
+                                    <p class="text-muted">18 articles</p>
+                                    <button class="btn btn-sm btn-primary">Edit</button>
+                                    <button class="btn btn-sm btn-danger">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Section -->
+                <div id="analytics-section" class="admin-section" style="display: none;">
+                    <h3 class="mb-4">Analytics & Reports</h3>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card shadow-sm">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Page Views</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h3>45,678</h3>
+                                    <p class="text-success"><i class="bi bi-arrow-up"></i> 12% from last month</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card shadow-sm">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Tool Usage</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h3>8,234</h3>
+                                    <p class="text-success"><i class="bi bi-arrow-up"></i> 8% from last month</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Forms Section -->
+                <div id="contact-section" class="admin-section" style="display: none;">
+                    <h3 class="mb-4">Contact Form Submissions</h3>
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Subject</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2024-01-15</td>
+                                        <td>Amit Sharma</td>
+                                        <td>amit@example.com</td>
+                                        <td>Investment Query</td>
+                                        <td><span class="badge bg-warning">Pending</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">View</button>
+                                            <button class="btn btn-sm btn-success">Mark Read</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024-01-14</td>
+                                        <td>Sneha Patel</td>
+                                        <td>sneha@example.com</td>
+                                        <td>Loan Information</td>
+                                        <td><span class="badge bg-success">Replied</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">View</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.admin-section').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            // Show selected section
+            document.getElementById(section + '-section').style.display = 'block';
+            
+            // Update active nav link
+            document.querySelectorAll('.admin-sidebar .nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
+
+

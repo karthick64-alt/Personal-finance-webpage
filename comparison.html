@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Comparison - FinanceHub</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d6efd'%3E%3Cpath d='M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8h18v10zm-2-6h-2v-2h2v2z'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d6efd'%3E%3Cpath d='M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8h18v10zm-2-6h-2v-2h2v2z'/%3E%3C/svg%3E">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-wallet2"></i> FinanceHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="guides.html">Guides</a></li>
+                    <li class="nav-item"><a class="nav-link" href="comparison.html">Compare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="budget.html">Budget</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="signup.html">Sign Up</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+        <h1 class="text-center mb-5">Product Comparison</h1>
+
+        <!-- Product Type Selector -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <ul class="nav nav-pills justify-content-center" id="productTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="credit-cards-tab" data-bs-toggle="pill" data-bs-target="#credit-cards" type="button">Credit Cards</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="loans-tab" data-bs-toggle="pill" data-bs-target="#loans" type="button">Loans</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="insurance-tab" data-bs-toggle="pill" data-bs-target="#insurance" type="button">Insurance</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="mutual-funds-tab" data-bs-toggle="pill" data-bs-target="#mutual-funds" type="button">Mutual Funds</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Credit Cards -->
+            <div class="tab-pane fade show active" id="credit-cards" role="tabpanel">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Compare Credit Cards</h5>
+                        <div>
+                            <select class="form-select form-select-sm" style="width: auto; display: inline-block;">
+                                <option>Sort by: Annual Fee</option>
+                                <option>Sort by: Rewards Rate</option>
+                                <option>Sort by: Interest Rate</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="comparison-table">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="text-start">Features</th>
+                                        <th>Card A - Premium</th>
+                                        <th>Card B - Rewards</th>
+                                        <th>Card C - Cashback</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Annual Fee</strong></td>
+                                        <td>₹5,000</td>
+                                        <td>₹2,500</td>
+                                        <td>₹1,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Rewards Rate</strong></td>
+                                        <td>2% on all purchases</td>
+                                        <td>1.5% on all purchases</td>
+                                        <td>5% on select categories</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Interest Rate</strong></td>
+                                        <td>24% p.a.</td>
+                                        <td>26% p.a.</td>
+                                        <td>28% p.a.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Welcome Bonus</strong></td>
+                                        <td>₹10,000</td>
+                                        <td>₹5,000</td>
+                                        <td>₹2,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Airport Lounge Access</strong></td>
+                                        <td><i class="bi bi-check-circle-fill text-success"></i> Yes</td>
+                                        <td><i class="bi bi-x-circle text-danger"></i> No</td>
+                                        <td><i class="bi bi-x-circle text-danger"></i> No</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Minimum Income</strong></td>
+                                        <td>₹10,00,000</td>
+                                        <td>₹5,00,000</td>
+                                        <td>₹3,00,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loans -->
+            <div class="tab-pane fade" id="loans" role="tabpanel">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">Compare Loans</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-md-3">
+                                <label class="form-label">Loan Type</label>
+                                <select class="form-select">
+                                    <option>Personal Loan</option>
+                                    <option>Home Loan</option>
+                                    <option>Car Loan</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Loan Amount</label>
+                                <input type="number" class="form-control" placeholder="500000">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Tenure</label>
+                                <input type="number" class="form-control" placeholder="60 months">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">&nbsp;</label>
+                                <button class="btn btn-success w-100">Compare</button>
+                            </div>
+                        </div>
+                        <div class="comparison-table">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Features</th>
+                                        <th>Bank A</th>
+                                        <th>Bank B</th>
+                                        <th>Bank C</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Interest Rate</strong></td>
+                                        <td>10.5% p.a.</td>
+                                        <td>11.0% p.a.</td>
+                                        <td>10.75% p.a.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Processing Fee</strong></td>
+                                        <td>1% of loan amount</td>
+                                        <td>0.5% of loan amount</td>
+                                        <td>1.5% of loan amount</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>EMI (₹5L, 5 years)</strong></td>
+                                        <td>₹10,750</td>
+                                        <td>₹10,850</td>
+                                        <td>₹10,800</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Prepayment Charges</strong></td>
+                                        <td>2%</td>
+                                        <td>1%</td>
+                                        <td>3%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Loan Amount</strong></td>
+                                        <td>Up to ₹50L</td>
+                                        <td>Up to ₹40L</td>
+                                        <td>Up to ₹30L</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insurance -->
+            <div class="tab-pane fade" id="insurance" role="tabpanel">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Compare Insurance Plans</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="comparison-table">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Features</th>
+                                        <th>Plan A - Term</th>
+                                        <th>Plan B - Whole Life</th>
+                                        <th>Plan C - ULIP</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Coverage Amount</strong></td>
+                                        <td>₹1 Crore</td>
+                                        <td>₹50 Lakh</td>
+                                        <td>₹75 Lakh</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Premium (Annual)</strong></td>
+                                        <td>₹15,000</td>
+                                        <td>₹50,000</td>
+                                        <td>₹75,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Policy Term</strong></td>
+                                        <td>30 years</td>
+                                        <td>Whole Life</td>
+                                        <td>20 years</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Maturity Benefit</strong></td>
+                                        <td><i class="bi bi-x-circle text-danger"></i> No</td>
+                                        <td><i class="bi bi-check-circle-fill text-success"></i> Yes</td>
+                                        <td><i class="bi bi-check-circle-fill text-success"></i> Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Investment Component</strong></td>
+                                        <td><i class="bi bi-x-circle text-danger"></i> No</td>
+                                        <td><i class="bi bi-check-circle-fill text-success"></i> Yes</td>
+                                        <td><i class="bi bi-check-circle-fill text-success"></i> Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Tax Benefits</strong></td>
+                                        <td><i class="bi bi-check-circle-fill text-success"></i> Yes</td>
+                                        <td><i class="bi bi-check-circle-fill text-success"></i> Yes</td>
+                                        <td><i class="bi bi-check-circle-fill text-success"></i> Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mutual Funds -->
+            <div class="tab-pane fade" id="mutual-funds" role="tabpanel">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0">Compare Mutual Funds</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="comparison-table">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Features</th>
+                                        <th>Fund A - Large Cap</th>
+                                        <th>Fund B - Mid Cap</th>
+                                        <th>Fund C - Small Cap</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>1 Year Returns</strong></td>
+                                        <td>12.5%</td>
+                                        <td>18.2%</td>
+                                        <td>22.8%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>3 Year Returns</strong></td>
+                                        <td>14.3%</td>
+                                        <td>16.5%</td>
+                                        <td>19.2%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>5 Year Returns</strong></td>
+                                        <td>15.8%</td>
+                                        <td>17.2%</td>
+                                        <td>18.5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Risk Level</strong></td>
+                                        <td><span class="badge bg-warning">Medium</span></td>
+                                        <td><span class="badge bg-danger">High</span></td>
+                                        <td><span class="badge bg-danger">Very High</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Expense Ratio</strong></td>
+                                        <td>1.2%</td>
+                                        <td>1.5%</td>
+                                        <td>1.8%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Minimum Investment</strong></td>
+                                        <td>₹500</td>
+                                        <td>₹500</td>
+                                        <td>₹500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- Footer -->
+   <footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h5><i class="bi bi-wallet2"></i> FinanceHub</h5>
+                <p>Your trusted partner in financial planning and wealth management.</p>
+            </div>
+            <div class="col-md-2">
+                <h6>Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="articles.html" class="text-white-50">Articles</a></li>
+                    <li><a href="tools.html" class="text-white-50">Tools</a></li>
+                    <li><a href="courses.html" class="text-white-50">Courses</a></li>
+                    <li><a href="guides.html" class="text-white-50">Guides</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h6>Company</h6>
+                <ul class="list-unstyled">
+                    <li><a href="about.html" class="text-white-50">About Us</a></li>
+                    <li><a href="contact.html" class="text-white-50">Contact</a></li>
+                    <li><a href="faq.html" class="text-white-50">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h6>Legal</h6>
+                <ul class="list-unstyled">
+                    <li><a href="terms.html" class="text-white-50">Terms</a></li>
+                    <li><a href="privacy.html" class="text-white-50">Privacy</a></li>
+                    <li><a href="disclaimer.html" class="text-white-50">Disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h6>Connect</h6>
+                <div class="social-icons-wrapper">
+                    <a href="#" class="social-icon facebook" aria-label="Facebook" title="Follow us on Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="social-icon twitter" aria-label="Twitter" title="Follow us on Twitter">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon linkedin" aria-label="LinkedIn" title="Connect with us on LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-icon instagram" aria-label="Instagram" title="Follow us on Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                </div>
+                <p class="text-white-50 small mt-3 mb-0">Follow us for financial tips and updates</p>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2025 FinanceHub. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

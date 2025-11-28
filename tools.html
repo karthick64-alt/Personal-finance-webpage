@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Tools - FinanceHub</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d6efd'%3E%3Cpath d='M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8h18v10zm-2-6h-2v-2h2v2z'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230d6efd'%3E%3Cpath d='M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8h18v10zm-2-6h-2v-2h2v2z'/%3E%3C/svg%3E">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-wallet2"></i> FinanceHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="guides.html">Guides</a></li>
+                    <li class="nav-item"><a class="nav-link" href="comparison.html">Compare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="budget.html">Budget</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="signup.html">Sign Up</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+        <h1 class="text-center mb-5">Financial Calculators & Tools</h1>
+
+        <!-- EMI Calculator -->
+        <div class="calculator-card" id="emi-calculator">
+            <h3><i class="bi bi-calculator"></i> EMI Calculator</h3>
+            <p class="text-muted">Calculate your Equated Monthly Installment (EMI) for home loans, car loans, or personal loans.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="emi-principal" class="form-label">Loan Amount (₹)</label>
+                        <input type="number" class="form-control" id="emi-principal" placeholder="500000" value="500000">
+                    </div>
+                    <div class="mb-3">
+                        <label for="emi-rate" class="form-label">Interest Rate (% per annum)</label>
+                        <input type="number" class="form-control" id="emi-rate" placeholder="8.5" step="0.1" value="8.5">
+                    </div>
+                    <div class="mb-3">
+                        <label for="emi-tenure" class="form-label">Loan Tenure (months)</label>
+                        <input type="number" class="form-control" id="emi-tenure" placeholder="60" value="60">
+                    </div>
+                    <button class="btn btn-primary w-100" onclick="calculateEMI()">Calculate EMI</button>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- SIP Calculator -->
+        <div class="calculator-card" id="sip-calculator">
+            <h3><i class="bi bi-graph-up-arrow"></i> SIP Calculator</h3>
+            <p class="text-muted">Calculate the future value of your Systematic Investment Plan (SIP) investments.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="sip-amount" class="form-label">Monthly Investment (₹)</label>
+                        <input type="number" class="form-control" id="sip-amount" placeholder="5000" value="5000">
+                    </div>
+                    <div class="mb-3">
+                        <label for="sip-rate" class="form-label">Expected Annual Return (%)</label>
+                        <input type="number" class="form-control" id="sip-rate" placeholder="12" step="0.1" value="12">
+                    </div>
+                    <div class="mb-3">
+                        <label for="sip-tenure" class="form-label">Investment Period (years)</label>
+                        <input type="number" class="form-control" id="sip-tenure" placeholder="10" value="10">
+                    </div>
+                    <button class="btn btn-success w-100" onclick="calculateSIP()">Calculate SIP</button>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Retirement Calculator -->
+        <div class="calculator-card" id="retirement-calculator">
+            <h3><i class="bi bi-calendar-check"></i> Retirement Calculator</h3>
+            <p class="text-muted">Plan your retirement corpus and see how much you need to save.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="ret-current-age" class="form-label">Current Age</label>
+                        <input type="number" class="form-control" id="ret-current-age" placeholder="30" value="30">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ret-retirement-age" class="form-label">Retirement Age</label>
+                        <input type="number" class="form-control" id="ret-retirement-age" placeholder="60" value="60">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ret-current-savings" class="form-label">Current Savings (₹)</label>
+                        <input type="number" class="form-control" id="ret-current-savings" placeholder="500000" value="500000">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ret-monthly-contribution" class="form-label">Monthly Contribution (₹)</label>
+                        <input type="number" class="form-control" id="ret-monthly-contribution" placeholder="10000" value="10000">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ret-expected-return" class="form-label">Expected Annual Return (%)</label>
+                        <input type="number" class="form-control" id="ret-expected-return" placeholder="10" step="0.1" value="10">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ret-inflation" class="form-label">Expected Inflation (%)</label>
+                        <input type="number" class="form-control" id="ret-inflation" placeholder="6" step="0.1" value="6">
+                    </div>
+                    <button class="btn btn-info w-100" onclick="calculateRetirement()">Calculate Retirement</button>
+                </div>
+             
+            </div>
+        </div>
+
+        <!-- Tax Calculator -->
+        <div class="calculator-card" id="tax-calculator">
+            <h3><i class="bi bi-receipt"></i> Income Tax Calculator</h3>
+            <p class="text-muted">Calculate your income tax liability for the financial year.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="tax-income" class="form-label">Annual Income (₹)</label>
+                        <input type="number" class="form-control" id="tax-income" placeholder="1000000" value="1000000">
+                    </div>
+                    <div class="mb-3">
+                        <label for="tax-deductions" class="form-label">Deductions (Section 80C, etc.) (₹)</label>
+                        <input type="number" class="form-control" id="tax-deductions" placeholder="150000" value="150000">
+                    </div>
+                    <button class="btn btn-warning w-100" onclick="calculateTax()">Calculate Tax</button>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Emergency Fund Calculator -->
+        <div class="calculator-card" id="emergency-calculator">
+            <h3><i class="bi bi-shield-check"></i> Emergency Fund Calculator</h3>
+            <p class="text-muted">Calculate how much you need in your emergency fund.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="ef-monthly-expenses" class="form-label">Monthly Expenses (₹)</label>
+                        <input type="number" class="form-control" id="ef-monthly-expenses" placeholder="50000" value="50000">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ef-months" class="form-label">Months of Coverage</label>
+                        <select class="form-select" id="ef-months">
+                            <option value="3">3 months</option>
+                            <option value="6" selected>6 months</option>
+                            <option value="9">9 months</option>
+                            <option value="12">12 months</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-danger w-100" onclick="calculateEmergencyFund()">Calculate</button>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Loan Eligibility Calculator -->
+        <div class="calculator-card" id="loan-eligibility-calculator">
+            <h3><i class="bi bi-check-circle"></i> Loan Eligibility Calculator</h3>
+            <p class="text-muted">Check how much loan you are eligible for based on your income.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="loan-monthly-income" class="form-label">Monthly Income (₹)</label>
+                        <input type="number" class="form-control" id="loan-monthly-income" placeholder="100000" value="100000">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loan-existing-emi" class="form-label">Existing EMI (₹)</label>
+                        <input type="number" class="form-control" id="loan-existing-emi" placeholder="0" value="0">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loan-rate" class="form-label">Interest Rate (%)</label>
+                        <input type="number" class="form-control" id="loan-rate" placeholder="8.5" step="0.1" value="8.5">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loan-tenure-years" class="form-label">Tenure (years)</label>
+                        <input type="number" class="form-control" id="loan-tenure-years" placeholder="20" value="20">
+                    </div>
+                    <button class="btn btn-primary w-100" onclick="calculateLoanEligibility()">Check Eligibility</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5><i class="bi bi-wallet2"></i> FinanceHub</h5>
+                    <p>Your trusted partner in financial planning and wealth management.</p>
+                </div>
+                <div class="col-md-2">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="articles.html" class="text-white-50">Articles</a></li>
+                        <li><a href="tools.html" class="text-white-50">Tools</a></li>
+                        <li><a href="courses.html" class="text-white-50">Courses</a></li>
+                        <li><a href="guides.html" class="text-white-50">Guides</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-white-50">About Us</a></li>
+                        <li><a href="contact.html" class="text-white-50">Contact</a></li>
+                        <li><a href="faq.html" class="text-white-50">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Legal</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="terms.html" class="text-white-50">Terms</a></li>
+                        <li><a href="privacy.html" class="text-white-50">Privacy</a></li>
+                        <li><a href="disclaimer.html" class="text-white-50">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Connect</h6>
+                    <div class="social-icons-wrapper">
+                        <a href="#" class="social-icon facebook" aria-label="Facebook" title="Follow us on Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon twitter" aria-label="Twitter" title="Follow us on Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon linkedin" aria-label="LinkedIn" title="Connect with us on LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-icon instagram" aria-label="Instagram" title="Follow us on Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                    <p class="text-white-50 small mt-3 mb-0">Follow us for financial tips and updates</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 FinanceHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        function calculateLoanEligibility() {
+            const monthlyIncome = parseFloat(document.getElementById('loan-monthly-income').value) || 0;
+            const existingEMI = parseFloat(document.getElementById('loan-existing-emi').value) || 0;
+            const rate = parseFloat(document.getElementById('loan-rate').value) || 0;
+            const tenureYears = parseFloat(document.getElementById('loan-tenure-years').value) || 0;
+
+            if (monthlyIncome <= 0 || rate <= 0 || tenureYears <= 0) {
+                showToast('Please enter valid values', 'danger');
+                return;
+            }
+
+            // Typically, banks allow 40-50% of income for EMI
+            const maxEMI = (monthlyIncome * 0.4) - existingEMI;
+            const monthlyRate = rate / 12 / 100;
+            const months = tenureYears * 12;
+            
+            if (maxEMI <= 0) {
+                document.getElementById('loan-eligibility-result').innerHTML = `
+                    <h4>Not Eligible</h4>
+                    <p>Your existing EMI is too high compared to your income.</p>
+                `;
+            } else {
+                const eligibleAmount = maxEMI * ((Math.pow(1 + monthlyRate, months) - 1) / (monthlyRate * Math.pow(1 + monthlyRate, months)));
+                
+                document.getElementById('loan-eligibility-result').innerHTML = `
+                    <h4>₹${formatNumber(eligibleAmount.toFixed(2))}</h4>
+                    <p class="mb-2">Maximum Loan Amount</p>
+                    <hr>
+                    <div class="row text-start mt-3">
+                        <div class="col-12">
+                            <strong>Maximum EMI:</strong><br>
+                            ₹${formatNumber(maxEMI.toFixed(2))}
+                        </div>
+                    </div>
+                `;
+            }
+            document.getElementById('loan-eligibility-result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
